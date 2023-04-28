@@ -1,6 +1,6 @@
 <script>
   export let data
-	let { date, excerpt, image, title } = data;
+	let { date, excerpt, image, title, tags } = data;
 </script>
 
 <svelte:head>
@@ -35,6 +35,7 @@
 			<a href="#">
 				#{tag}
 			</a>&nbsp;
+		{/each}
 		</p>
 		<p>
 			<img src={image.src} alt={image.alt} />
@@ -44,7 +45,7 @@
 	</div>
 
 	<div class="prose prose-invert prose-img:rounded-xl prose-img:mx-auto prose-img:object-contain prose-img:max-h-96 prose-img:max-w-full max-w-none px-4 sm:px-8 mb-8">
-		<svelte:component this={content} />
+		<svelte:component this={data.content} />
 	</div>
 
 	<p class="flex items-center justify-end">
