@@ -16,7 +16,7 @@
 <div class="p-4 sm:p-8 text-center max-w-screen-lg mx-auto">
 	<p class="text-xl my-6">
 		<a class="inline-block p-2" href="https://zummon.page/" target="_blank">
-			Made by zummon
+			Made by zummon (Teerapat Anantarattanachai)
 		</a>
 	</p>
 	<p class="text-xl">
