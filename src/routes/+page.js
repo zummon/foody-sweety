@@ -1,6 +1,6 @@
 export const prerender = true;
 
-export const load = async ({}) => {
+export const load = async ({ }) => {
 	let result = [];
 	const markdowns = import.meta.glob('../lib/blogs/*.md');
 
