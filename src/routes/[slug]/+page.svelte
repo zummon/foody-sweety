@@ -1,5 +1,9 @@
 <script>
+	import { goto } from "$app/navigation";
+
 	export let data;
+
+	// import { tags } from '../../lib/state'
 </script>
 
 <svelte:head>
@@ -24,7 +28,10 @@
 		<h1>{data.title}</h1>
 		<p>
 			{#each data.tags as tag, index (`tag-${index}`)}
-				<a class="ml-2 first:ml-0" href="/">{tag}</a>
+				<button class="ml-2 first:ml-0" on:click={() => {
+					// $tags = [tag]
+					goto(`/`)
+				}}>{tag}</button>
 			{/each}
 		</p>
 		<p>

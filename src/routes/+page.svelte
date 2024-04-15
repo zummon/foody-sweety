@@ -1,7 +1,9 @@
 <script>
+	import { onMount } from "svelte";
+	import { tags } from '../lib/state'
+
 	export let data;
 
-	let tags = [...data.tags]
 	let blogs = []
 
 	$: {
@@ -9,12 +11,16 @@
 			let detect = false 
 			for (const tag of blog.tags) {
 				if (!detect) {
-					detect = tags.includes(tag)
+					detect = $tags.includes(tag)
 				}
 			}
 			return detect
 		})
 	}
+
+	onMount(async () => {
+		$tags = [...data.tags]
+	})
 </script>
 
 <svelte:head>
@@ -24,12 +30,12 @@
 
 <div class="flex flex-wrap justify-center gap-4 max-w-screen-lg mx-auto">
 	{#each data.tags as tag, index (`t-${index}`)}
-		<button class="py-0.5 px-1 sm:px-2 rounded-full text-lg transition duration-500 {tags.includes(tag) ? 'text-pink-400 bg-pink-900/50' : 'text-blue-400 bg-blue-900/50'}" on:click={() => {
-			if (!tags.includes(tag)) {
-				tags = [...tags, tag]
+		<button class="py-0.5 px-1 sm:px-2 rounded-full text-lg transition duration-500 {$tags.includes(tag) ? 'text-pink-400 bg-pink-900/50' : 'text-blue-400 bg-blue-900/50'}" on:click={() => {
+			if (!$tags.includes(tag)) {
+				$tags = [...$tags, tag]
 			} else {
-				tags.splice(tags.indexOf(tag), 1)
-				tags = tags
+				$tags.splice($tags.indexOf(tag), 1)
+				$tags = $tags
 			}
 		}}>{tag}</button>
 	{/each}
@@ -50,12 +56,12 @@
 			<h1 class="text-4xl p-4 sm:p-8">{blog.title}</h1>
 			<div class="px-4 sm:px-8">
 				{#each blog.tags as tag, tagIndex (`${index}-${tagIndex}`)}
-					<button class="transition duration-500 ml-2 first:ml-0 {tags.includes(tag) ? 'text-pink-400' : 'text-blue-400'}" on:click={() => {
-						if (!tags.includes(tag)) {
-							tags = [...tags, tag]
+					<button class="transition duration-500 ml-2 first:ml-0 {$tags.includes(tag) ? 'text-pink-400' : 'text-blue-400'}" on:click={() => {
+						if ($tags.includes(tag)) {
+							$tags.splice($tags.indexOf(tag), 1)
+							$tags = $tags
 						} else {
-							tags.splice(tags.indexOf(tag), 1)
-							tags = tags
+							$tags = [tag]
 						}
 					}}>{tag}</button>
 				{/each}
