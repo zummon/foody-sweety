@@ -1,6 +1,4 @@
 <script>
-	let title = "Foody Sweety";
-	let excerpt = "Lorem ipsum dolor sit, amet consectetur adipisicing elit.";
 	let image = { src: "" };
 	let date;
 
@@ -8,8 +6,8 @@
 </script>
 
 <svelte:head>
-	<title>{title}</title>
-	<meta name="description" content={excerpt} />
+	<title>{data.title}</title>
+	<meta name="description" content={data.excerpt} />
 </svelte:head>
 
 {#each data.blogs as { date, excerpt, image, tags, title, slug }, index (index)}
@@ -23,40 +21,34 @@
 				alt={image.alt}
 			/>
 		</div>
-		<div class="flex-1 grid grid-cols-1">
+		<div class="flex-1 flex flex-col">
 			<h1 class="text-4xl p-4 sm:p-8">{title}</h1>
-			<p class="p-4 sm:p-8 leading-8">
+			<div class="px-4 sm:px-8">
 				{#each tags as tag, tagIndex (`${index}-${tagIndex}`)}
-					<a class={`font-semibold ${tagIndex !== 0 ? "ml-2" : ""}`} href={`#`}>
-						#{tag}
+					<a class="text-orange-400 transition duration-500 ml-2 first:ml-0" href="/">
+						{tag}
 					</a>
 				{/each}
-				<br />
+			</div>
+			<p class="p-4 sm:p-8 leading-8">
 				{excerpt}
 			</p>
-			<p class="flex items-center justify-end mt-auto">
-				{new Date(date).toLocaleDateString(undefined, {
-					year: "numeric",
-					month: "long",
-					day: "numeric",
-				})}
+			<div class="flex items-center justify-end mt-auto">
+				<span class="">
+					{new Date(date).toLocaleDateString(undefined, {
+						year: "numeric",
+						month: "long",
+						day: "numeric",
+					})}
+				</span>
 				<a
-					href={`/${slug}`}
-					class="transition duration-500 ease-in-out hover:bg-gray-50 hover:text-gray-900 px-6 py-4 ml-2 rounded-br-xl font-bold"
+					href="/{slug}"
+					class="transition duration-500 hover:text-orange-500 px-6 py-4 ml-2 rounded-br-xl"
 				>
-					<!-- share-solid icon  -->
-					<svg
-						class="w-5 h-5"
-						xmlns="http://www.w3.org/2000/svg"
-						viewBox="0 0 512 512"
-					>
-						<path
-							fill="currentColor"
-							d="M503.691 189.836L327.687 37.851C312.281 24.546 288 35.347 288 56.015v80.053C127.371 137.907 0 170.1 0 322.326c0 61.441 39.581 122.309 83.333 154.132 13.653 9.931 33.111-2.533 28.077-18.631C66.066 312.814 132.917 274.316 288 272.085V360c0 20.7 24.3 31.453 39.687 18.164l176.004-152c11.071-9.562 11.086-26.753 0-36.328z"
-						/>
-					</svg>
+					<!-- share  -->
+					<svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="currentColor" d="M307 34.8c-11.5 5.1-19 16.6-19 29.2v64H176C78.8 128 0 206.8 0 304C0 417.3 81.5 467.9 100.2 478.1c2.5 1.4 5.3 1.9 8.1 1.9c10.9 0 19.7-8.9 19.7-19.7c0-7.5-4.3-14.4-9.8-19.5C108.8 431.9 96 414.4 96 384c0-53 43-96 96-96h96v64c0 12.6 7.4 24.1 19 29.2s25 3 34.4-5.4l160-144c6.7-6.1 10.6-14.7 10.6-23.8s-3.8-17.7-10.6-23.8l-160-144c-9.4-8.5-22.9-10.6-34.4-5.4z"/></svg>
 				</a>
-			</p>
+			</div>
 		</div>
 	</div>
 {/each}

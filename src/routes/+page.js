@@ -1,6 +1,6 @@
 export const prerender = true;
 
-export const load = async ({ }) => {
+export const load = async ({ parent }) => {
 	let result = [];
 	const markdowns = import.meta.glob('../lib/blogs/*.md');
 
@@ -18,5 +18,7 @@ export const load = async ({ }) => {
 		});
 	}
 
-	return { blogs: result.slice(0, 4) };
+	let { title, excerpt } = await parent()
+
+	return { blogs: result.slice(0, 4), title, excerpt };
 };

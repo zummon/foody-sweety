@@ -1,5 +1,3 @@
-need updating
-
 - Change the background in `./src/app.html` in `<body>` property style.
 - Add, edit and remove your contents in `./src/lib/blogs` to generate the site pages.
 
@@ -10,13 +8,3 @@ Something breaks, needs upgrade. Let me know.
 - [Tailwind CSS](https://tailwindcss.com/)
 
 - [Font Awesome](https://fontawesome.com/)
-
-- [Photo by Paulina H. on Unsplash](https://unsplash.com/photos/wyi4aejQ8vw)
-
-- [Photo by Nihal Demirci on Unsplash](https://unsplash.com/photos/9aaKx1NZPQw)
-
-- [Photo by Taylor Kiser on Unsplash](https://unsplash.com/photos/s7Vh1kg-clM)
-
-- [Photo by Ekrulila on Unsplash](https://unsplash.com/photos/09Egu9N-UyA)
-
-- [Photo by Chris Ainsworth on Unsplash](https://unsplash.com/photos/Aae5ozmFb_s)

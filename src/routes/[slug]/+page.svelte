@@ -12,19 +12,10 @@
 	<p>
 		<a
 			href="/"
-			class="transition duration-500 ease-in-out hover:bg-gray-50 hover:text-gray-900 px-6 py-4 rounded-tl-xl inline-block font-bold"
+			class="transition duration-500 hover:text-orange-500 px-6 py-4 rounded-tl-xl inline-block font-bold"
 		>
-			<!-- reply-solid icon -->
-			<svg
-				class="w-5 h-5"
-				xmlns="http://www.w3.org/2000/svg"
-				viewBox="0 0 512 512"
-			>
-				<path
-					fill="currentColor"
-					d="M8.309 189.836L184.313 37.851C199.719 24.546 224 35.347 224 56.015v80.053c160.629 1.839 288 34.032 288 186.258 0 61.441-39.581 122.309-83.333 154.132-13.653 9.931-33.111-2.533-28.077-18.631 45.344-145.012-21.507-183.51-176.59-185.742V360c0 20.7-24.3 31.453-39.687 18.164l-176.004-152c-11.071-9.562-11.086-26.753 0-36.328z"
-				/>
-			</svg>
+			<!-- reply -->
+			<svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="currentColor" d="M205 34.8c11.5 5.1 19 16.6 19 29.2v64H336c97.2 0 176 78.8 176 176c0 113.3-81.5 163.9-100.2 174.1c-2.5 1.4-5.3 1.9-8.1 1.9c-10.9 0-19.7-8.9-19.7-19.7c0-7.5 4.3-14.4 9.8-19.5c9.4-8.8 22.2-26.4 22.2-56.7c0-53-43-96-96-96H224v64c0 12.6-7.4 24.1-19 29.2s-25 3-34.4-5.4l-160-144C3.9 225.7 0 217.1 0 208s3.9-17.7 10.6-23.8l160-144c9.4-8.5 22.9-10.6 34.4-5.4z"/></svg>
 		</a>
 	</p>
 
@@ -34,9 +25,7 @@
 		<h1>{title}</h1>
 		<p>
 			{#each tags as tag, index (`tag-${index}`)}
-				<a href="/tag">
-					#{tag}
-				</a>&nbsp;
+				<a class="ml-2 first:ml-0" href="/">{tag}</a>
 			{/each}
 		</p>
 		<p>
@@ -61,19 +50,10 @@
 	<p class="flex items-center justify-end">
 		<a
 			href="/"
-			class="transition duration-500 ease-in-out hover:bg-gray-50 hover:text-gray-900 px-6 py-4 rounded-br-xl font-bold"
+			class="transition duration-500 hover:text-orange-500 px-6 py-4 rounded-br-xl font-bold"
 		>
-			<!-- share-solid icon -->
-			<svg
-				class="w-5 h-5"
-				xmlns="http://www.w3.org/2000/svg"
-				viewBox="0 0 512 512"
-			>
-				<path
-					fill="currentColor"
-					d="M503.691 189.836L327.687 37.851C312.281 24.546 288 35.347 288 56.015v80.053C127.371 137.907 0 170.1 0 322.326c0 61.441 39.581 122.309 83.333 154.132 13.653 9.931 33.111-2.533 28.077-18.631C66.066 312.814 132.917 274.316 288 272.085V360c0 20.7 24.3 31.453 39.687 18.164l176.004-152c11.071-9.562 11.086-26.753 0-36.328z"
-				/>
-			</svg>
+			<!-- share  -->
+			<svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="currentColor" d="M307 34.8c-11.5 5.1-19 16.6-19 29.2v64H176C78.8 128 0 206.8 0 304C0 417.3 81.5 467.9 100.2 478.1c2.5 1.4 5.3 1.9 8.1 1.9c10.9 0 19.7-8.9 19.7-19.7c0-7.5-4.3-14.4-9.8-19.5C108.8 431.9 96 414.4 96 384c0-53 43-96 96-96h96v64c0 12.6 7.4 24.1 19 29.2s25 3 34.4-5.4l160-144c6.7-6.1 10.6-14.7 10.6-23.8s-3.8-17.7-10.6-23.8l-160-144c-9.4-8.5-22.9-10.6-34.4-5.4z"/></svg>
 		</a>
 	</p>
 </div>
