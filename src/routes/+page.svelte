@@ -41,7 +41,7 @@
 					day: "numeric",
 				})}
 				<a
-					href={`/blog/${slug}`}
+					href={`/${slug}`}
 					class="transition duration-500 ease-in-out hover:bg-gray-50 hover:text-gray-900 px-6 py-4 ml-2 rounded-br-xl font-bold"
 				>
 					<!-- share-solid icon  -->
