@@ -1,7 +1,8 @@
 export const prerender = true;
 
 export const load = async ({ parent }) => {
-	let result = [];
+	let blogs = [];
+	let tags = new Set()
 	const markdowns = import.meta.glob('../lib/blogs/*.md');
 
 	for (const path in markdowns) {
@@ -10,7 +11,11 @@ export const load = async ({ parent }) => {
 			let metadata = markdown.metadata;
 			let slug = path.split('/').pop().slice(0, -3);
 
-			result.push({
+			metadata.tags.forEach(tag => {
+				tags.add(tag)
+			});
+
+			blogs.push({
 				...metadata,
 				content,
 				slug,
@@ -20,5 +25,5 @@ export const load = async ({ parent }) => {
 
 	let { title, excerpt } = await parent()
 
-	return { blogs: result.slice(0, 4), title, excerpt };
+	return { blogs, title, excerpt, tags: Array.from(tags) };
 };
