@@ -34,7 +34,7 @@
 		<h1>{title}</h1>
 		<p>
 			{#each tags as tag, index (`tag-${index}`)}
-				<a href="#">
+				<a href="/tag">
 					#{tag}
 				</a>&nbsp;
 			{/each}

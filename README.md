@@ -11,8 +11,6 @@ Something breaks, needs upgrade. Let me know.
 
 - [Font Awesome](https://fontawesome.com/)
 
-- [Photo by Grace Ho on Unsplash](https://unsplash.com/photos/5f0QAmE7I3Q)
-
 - [Photo by Paulina H. on Unsplash](https://unsplash.com/photos/wyi4aejQ8vw)
 
 - [Photo by Nihal Demirci on Unsplash](https://unsplash.com/photos/9aaKx1NZPQw)

@@ -20,7 +20,7 @@
 		</a>
 	</p>
 	<p class="text-xl">
-		<a class="inline-block p-2" href="#">
+		<a class="inline-block p-2" target="_blank" href="https://www.facebook.com/zummonSpace/">
 			<!-- facebook-brands -->
 			<svg
 				class="w-5 h-5"
@@ -33,7 +33,7 @@
 				/>
 			</svg>
 		</a>
-		<a class="inline-block p-2" href="#">
+		<a class="inline-block p-2" target="_blank" href="https://github.com/zummon/">
 			<!-- github-brands -->
 			<svg
 				class="w-5 h-5"
@@ -46,7 +46,7 @@
 				/>
 			</svg>
 		</a>
-		<a class="inline-block p-2" href="#">
+		<a class="inline-block p-2" target="_blank" href="https://twitter.com/">
 			<!-- twitter-brands -->
 			<svg
 				class="w-5 h-5"
@@ -59,7 +59,7 @@
 				/>
 			</svg>
 		</a>
-		<a class="inline-block p-2" href="#">
+		<a class="inline-block p-2" target="_blank" href="https://www.youtube.com/">
 			<!-- youtube-brands -->
 			<svg
 				class="w-5 h-5"
