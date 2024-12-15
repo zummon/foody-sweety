@@ -1,84 +1,76 @@
 <script>
 	import { onMount } from "svelte";
-	import { tags } from '../lib/state'
 
-	export let data;
+	let { data } = $props();
 
-	let blogs = []
-
-	$: {
-		blogs = data.blogs.filter((blog) => {
-			let detect = false 
-			for (const tag of blog.tags) {
-				if (!detect) {
-					detect = $tags.includes(tag)
+	let tags = $state([...data.tags])
+	let foods = $derived.by(() => {
+		return data.foods.filter(food => { 
+			let show = false
+			for (let tag of food.tags) {
+				if (tags.includes(tag)) {
+					show = true
+					break
 				}
 			}
-			return detect
+			return show
 		})
-	}
+	})
 
 	onMount(async () => {
-		$tags = [...data.tags]
 	})
 </script>
 
 <svelte:head>
 	<title>{data.title}</title>
-	<meta name="description" content={data.excerpt} />
+	<meta name="description" content={data.desc} />
 </svelte:head>
 
 <div class="flex flex-wrap justify-center gap-4 max-w-screen-lg mx-auto">
-	{#each data.tags as tag, index (`t-${index}`)}
-		<button class="py-0.5 px-1 sm:px-2 rounded-full text-lg transition duration-500 {$tags.includes(tag) ? 'text-pink-400 bg-pink-900/50' : 'text-blue-400 bg-blue-900/50'}" on:click={() => {
-			if (!$tags.includes(tag)) {
-				$tags = [...$tags, tag]
+	{#each data.tags as tag, index (`tag-${index}`)}
+		<button class="py-0.5 px-1 sm:px-2 rounded-full text-lg transition duration-500 {tags.includes(tag) ? 'text-pink-600 bg-pink-100 dark:text-pink-400 dark:bg-pink-900' : 'text-blue-600 bg-blue-100 dark:text-blue-400 dark:bg-blue-900'}" onclick={() => {
+			if (tags.includes(tag)) {
+				tags.splice(tags.indexOf(tag), 1)
 			} else {
-				$tags.splice($tags.indexOf(tag), 1)
-				$tags = $tags
+				tags.push(tag)
 			}
 		}}>{tag}</button>
 	{/each}
 </div>
 
-{#each blogs as blog, index (index)}
+{#each foods as food, index (index)}
 	<div
-		class="dark:bg-gray-900 bg-gray-50 max-w-screen-md rounded-xl mx-auto my-8 shadow-2xl sm:flex flex-wrap"
+		class="dark:bg-zinc-900 bg-zinc-50 max-w-screen-md rounded-xl mx-auto my-8 shadow-2xl sm:flex flex-wrap"
 	>
 		<div class="flex-1">
 			<img
 				class="min-h-full w-full h-56 sm:h-72 md:h-96 object-cover rounded-t-xl sm:rounded-l-xl sm:rounded-tr-none"
-				src={blog.image.src}
-				alt={blog.image.alt}
+				src={food.image}
+				alt={food.title}
 			/>
 		</div>
 		<div class="flex-1 flex flex-col">
-			<h1 class="text-4xl p-4 sm:p-8">{blog.title}</h1>
+			<h1 class="text-4xl p-4 sm:p-8">{food.title}</h1>
 			<div class="px-4 sm:px-8">
-				{#each blog.tags as tag, tagIndex (`${index}-${tagIndex}`)}
-					<button class="transition duration-500 ml-2 first:ml-0 {$tags.includes(tag) ? 'text-pink-400' : 'text-blue-400'}" on:click={() => {
-						if ($tags.includes(tag)) {
-							$tags.splice($tags.indexOf(tag), 1)
-							$tags = $tags
+				{#each food.tags as tag, tagIndex (`${index}-${tagIndex}`)}
+					<button class="transition duration-500 ml-2 first:ml-0 {tags.includes(tag) ? 'text-pink-600 dark:text-pink-400' : 'text-blue-600 dark:text-blue-400'}" onclick={() => {
+						if (tags.includes(tag)) {
+							tags.splice(tags.indexOf(tag), 1)
 						} else {
-							$tags = [tag]
+							tags = [tag]
 						}
 					}}>{tag}</button>
 				{/each}
 			</div>
 			<p class="p-4 sm:p-8 leading-8">
-				{blog.excerpt}
+				{food.desc}
 			</p>
 			<div class="flex items-center justify-end mt-auto">
 				<span class="">
-					{new Date(blog.date).toLocaleDateString(undefined, {
-						year: "numeric",
-						month: "long",
-						day: "numeric",
-					})}
+		
 				</span>
 				<a
-					href="/{blog.slug}"
+					href="/{food.title}"
 					class="transition duration-500 hover:text-pink-500 px-6 py-4 ml-2 rounded-br-xl"
 				>
 					<!-- share  -->

@@ -1,17 +1,13 @@
 <script>
-	import { goto } from "$app/navigation";
-
-	export let data;
-
-	// import { tags } from '../../lib/state'
+	let { data } = $props();
 </script>
 
 <svelte:head>
 	<title>{data.title}</title>
-	<meta name="description" content={data.excerpt} />
+	<meta name="description" content={data.desc} />
 </svelte:head>
 
-<div class="dark:bg-gray-900 bg-gray-50 max-w-screen-md rounded-xl mx-auto my-8 shadow-2xl">
+<div class="dark:bg-zinc-900 bg-zinc-50 max-w-screen-md rounded-xl mx-auto my-8 shadow-2xl">
 	<p>
 		<a
 			href="/"
@@ -28,29 +24,23 @@
 		<h1>{data.title}</h1>
 		<p>
 			{#each data.tags as tag, index (`tag-${index}`)}
-				<button class="ml-2 first:ml-0" on:click={() => {
-					// $tags = [tag]
-					goto(`/`)
+				<button class="ml-2 first:ml-0" onclick={() => {
 				}}>{tag}</button>
 			{/each}
 		</p>
 		<p>
-			<img src={data.image.src} alt={data.image.alt} />
+			<img src={data.image} alt={data.title} />
 		</p>
-		<p>{data.excerpt}</p>
+		<p>{data.desc}</p>
 		<p>
-			{new Date(data.date).toLocaleDateString(undefined, {
-				year: "numeric",
-				month: "long",
-				day: "numeric",
-			})}
+	
 		</p>
 	</div>
 
 	<div
 		class="prose dark:prose-invert prose-img:rounded-xl prose-img:mx-auto prose-img:object-contain prose-img:max-h-96 prose-img:max-w-full max-w-none px-4 sm:px-8 mb-8"
 	>
-		<svelte:component this={data.content} />
+		
 	</div>
 
 	<p class="flex items-center justify-end">

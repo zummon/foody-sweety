@@ -1,9 +1,11 @@
+import foods from '../../lib/foods.json'
+
 export const prerender = true;
 
 export const load = async ({ params }) => {
-	const markdown = await import(`../../lib/blogs/${params.slug}.md`);
-	let content = markdown.default;
-	let metadata = markdown.metadata;
+	// const markdown = await import(`../../lib/content/${params.slug}.md`);
 
-	return { ...metadata, content };
+	let food = foods.find(food => food.title == params.slug)
+
+	return { ...food };
 };

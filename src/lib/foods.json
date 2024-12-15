@@ -1,0 +1,32 @@
+[
+	{
+		"title": "Chocolate Sphere Delight",
+		"desc" : "This chocolate sphere delight is a decadent dessert that will satisfy any chocolate craving. A sphere of rich chocolate mousse, creamy vanilla ice cream, and a drizzle of dark chocolate sauce",
+		"image": "https://i.imgur.com/wBdLnfB.jpeg",
+		"tags": ["Chocolate", "Dessert"]
+	},
+	{
+		"title": "Modern Tiramisu",
+		"desc" : "A visually stunning reinterpretation of the classic tiramisu. This deconstructed dessert showcases individual components like coffee jelly, airy mascarpone foam, and a delicate ladyfinger crumble. The arrangement on the plate invites the diner to assemble their own unique bites",
+		"image": "https://i.imgur.com/7RysxcR.jpeg",
+		"tags": ["Dessert"]
+	},
+	{
+		"title": "Ramen Night in",
+		"desc" : "Cozy up and enjoy a delicious bowl of homemade ramen featuring a flavorful broth, al dente noodles, tender pork slices, soft-boiled eggs, and a medley of colorful vegetables",
+		"image": "https://i.imgur.com/3fj6NsT.jpeg",
+		"tags": ["Noodles"]
+	},
+	{
+		"title": "Decadent Chocolate Layer Cake",
+		"desc" : "An irresistible chocolate layer cake adorned with a rich dark chocolate ganache glaze and a scattering of fresh raspberries. This decadent dessert is sure to satisfy any chocolate lover",
+		"image": "https://i.imgur.com/G8CuqcC.jpeg",
+		"tags": ["Chocolate", "Dessert"]
+	},
+	{
+		"title": "Molecular Gastronomy",
+		"desc" : "This molecular gastronomy masterpiece uses spheres, textures, and colors to create a visually stunning and innovative dessert",
+		"image": "https://i.imgur.com/fuhOp08.jpeg",
+		"tags": ["Dessert"]
+	}
+]
