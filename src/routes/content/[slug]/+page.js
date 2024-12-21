@@ -2,6 +2,8 @@ import { marked } from 'marked'
 import food from '../../../lib/food.json'
 
 export const prerender = true;
+export const ssr = true;
+export const csr = false;
 
 export async function load({ params }) {
 	let pick = food[params.slug]
