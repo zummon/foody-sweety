@@ -5,7 +5,7 @@
 
 	let tags = $state([...data.tags])
 	let foods = $derived.by(() => {
-		return data.foods.filter(food => { 
+		return data.foods.filter(food => {
 			let show = false
 			for (let tag of food.tags) {
 				if (tags.includes(tag)) {
@@ -53,7 +53,7 @@
 			<h1 class="text-4xl p-4 sm:p-8">{food.title}</h1>
 			<div class="px-4 sm:px-8">
 				{#each food.tags as tag, tagIndex (`${index}-${tagIndex}`)}
-					<span class=" ml-2 first:ml-0 text-blue-600 dark:text-blue-300" >{tag}</span>
+					<span class="ml-2 first:ml-0 text-blue-600 dark:text-blue-300">{tag}</span>
 				{/each}
 			</div>
 			<p class="p-4 sm:p-8 leading-8">
