@@ -3,6 +3,20 @@
 
 	let { data } = $props();
 
+	let tags = $state([...data.tags])
+	let foods = $derived.by(() => {
+		return data.foods.filter(food => {
+			let show = false
+			for (let tag of food.tags) {
+				if (tags.includes(tag)) {
+					show = true
+					break
+				}
+			}
+			return show
+		})
+	})
+
 	onMount(async () => {
 	})
 </script>
@@ -14,15 +28,17 @@
 
 <div class="flex flex-wrap justify-center gap-4 max-w-(--breakpoint-lg) mx-auto">
 	{#each data.tags as tag, index (`tag-${index}`)}
-		<div class="rounded-full" style="background-image: url({tag.image});">
-			<button class=" text-lg text-pink-600 bg-pink-100 dark:text-pink-400 dark:bg-pink-900" onclick={() => {
-
-			}}>{tag}</button>
-		</div>
+		<button class="py-0.5 px-1 sm:px-2 rounded-full text-lg {tags.includes(tag) ? 'text-pink-600 bg-pink-100 dark:text-pink-400 dark:bg-pink-900' : 'text-blue-600 bg-blue-100 dark:text-blue-400 dark:bg-blue-900'}" onclick={() => {
+			if (tags.includes(tag)) {
+				tags.splice(tags.indexOf(tag), 1)
+			} else {
+				tags.push(tag)
+			}
+		}}>{tag}</button>
 	{/each}
 </div>
 
-{#each data.foods as food, index (index)}
+{#each foods as food, index (index)}
 	<div
 		class="dark:bg-zinc-800 bg-zinc-50 max-w-(--breakpoint-md) rounded-xl mx-auto my-8 shadow-lg shadow-pink-200 dark:shadow-pink-950 sm:flex flex-wrap"
 	>

@@ -77,5 +77,19 @@
 		"allergens": [
 			"dairy"
 		]
+	},
+	"rainbow-gradient-cake": {
+		"title": "Rainbow Gradient Cake",
+		"desc": "A beautifully crafted rainbow gradient cake displayed on a white cake stand. The frosting transitions smoothly from deep blue at the base to soft pink at the top, creating an eye-catching ombre effect. Perfectly textured with swirls on the top, this cake exudes elegance and creativity. A stack of white plates and fresh lemons in the background add a touch of freshness and warmth to the minimalist composition. Ideal for celebrations, weddings, or birthdays, this cake is both a visual and culinary delight",
+		"image": "https://i.imgur.com/knvt8Hh.jpeg",
+		"tags": [
+			"Dessert"
+		],
+		"price": 22.00,
+		"vegetarian": false,
+		"spicy": false,
+		"allergens": [
+			""
+		]
 	}
 }
