@@ -17,9 +17,9 @@
 	});
 </script>
 
-<div class="p-4 sm:p-8 text-center max-w-(--breakpoint-lg) mx-auto">
-	<h1 class="text-4xl font-bold inline">{data.title}</h1>
-	<button class="text-zinc-500"
+<nav class="py-6 px-8 md:px-16 lg:px-24 flex justify-between items-center">
+	<h1 class="text-2xl md:text-3xl font-serif font-bold dark:text-gold">Sweet Dark
+		<button class="text-zinc-500"
 		onclick={() => {
 			isdark = !isdark;
 			document.documentElement.classList.toggle("dark", isdark);
@@ -29,13 +29,21 @@
 		<!-- moon -->
 		<svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="currentColor" d="M223.5 32C100 32 0 132.3 0 256S100 480 223.5 480c60.6 0 115.5-24.2 155.8-63.4c5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-9.8 1.7-19.8 2.6-30.1 2.6c-96.9 0-175.5-78.8-175.5-176c0-65.8 36-123.1 89.3-153.3c6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-6.3-.5-12.6-.8-19-.8z"/></svg>
 	</button>
-	<p class="text-xl my-6">{data.desc}
-	</p>
-</div>
+	</h1>
+	<ul class="flex space-x-6 md:space-x-10 text-lg">
+		<li><a href="/content" class="hover:text-gold transition duration-300">Menu</a></li>
+		<li><a href="/" class="hover:text-gold transition duration-300">About</a></li>
+		<li><a href="/" class="hover:text-gold transition duration-300">Contact</a></li>
+		<li><a href="/" class="bg-gold text-dark-bg py-2 px-4 rounded-md hover:bg-yellow-500 transition duration-300">Reservations</a></li>
+	</ul>
+</nav>
+
 <div class="">
 	{@render children()}
 </div>
-<div class="p-4 sm:p-8 text-center max-w-(--breakpoint-lg) mx-auto">
+
+<div class="py-8 px-8 md:px-16 lg:px-24 text-center">
+	<p>&copy; 2024 Sweet Dark Restaurant. Website template.</p>
 	<p class="text-xl my-6">
 		<span class="inline-block p-2">
 			Made by Teerapat Anantarattanachai
