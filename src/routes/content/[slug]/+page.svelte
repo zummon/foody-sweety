@@ -7,7 +7,7 @@
 	<meta name="description" content={data.desc} />
 </svelte:head>
 
-<div class="dark:bg-zinc-800 bg-zinc-50 max-w-(--breakpoint-md) rounded-xl mx-auto my-8 shadow-lg shadow-pink-200 dark:shadow-pink-950">
+<div class="dark:bg-zinc-800 bg-zinc-50 max-w-prose rounded-xl mx-auto my-8 shadow-lg shadow-pink-200 dark:shadow-pink-950">
 	<p>
 		<a
 			href="/"
@@ -19,7 +19,7 @@
 	</p>
 
 	<div
-		class="prose dark:prose-invert prose-img:rounded-xl prose-img:mx-auto prose-img:object-contain prose-img:max-h-96 prose-img:max-w-full max-w-none px-4 sm:px-8 mb-8 text-center"
+		class="prose dark:prose-invert max-w-none px-4 sm:px-8 mb-8 text-center"
 	>
 		<h1>{data.title}</h1>
 		<p>
@@ -29,7 +29,7 @@
 		</p>
 		<p>
 			<a href={data.image} target="_blank">
-				<img src={data.image} alt={data.slug} />
+				<img class="rounded-xl object-contain mx-auto max-h-96 max-w-full" src={data.image} alt={data.slug} />
 			</a>
 		</p>
 		<p>{data.desc}</p>
@@ -39,7 +39,7 @@
 	</div>
 
 	<div
-		class="prose dark:prose-invert prose-img:rounded-xl prose-img:mx-auto prose-img:object-contain prose-img:max-h-96 prose-img:max-w-full max-w-none px-4 sm:px-8 mb-8"
+		class="prose dark:prose-invert max-w-none px-4 sm:px-8 mb-8"
 	>
 		{@html data.content}
 	</div>

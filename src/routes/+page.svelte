@@ -17,7 +17,7 @@
 	<div class="py-8 px-12 rounded-lg">
 		<h2 class="text-4xl md:text-6xl font-serif font-bold mb-4">{data.title}</h2>
 		<p class="text-lg md:text-xl mb-8">{data.desc}</p>
-		<a href="/content" class="bg-gold text-dark-bg py-3 px-6 rounded-md text-lg hover:bg-yellow-500 transition duration-300">View Menu</a>
+		<a href="/content" class="bg-yellow-500 text-zinc-900 py-3 px-6 rounded-md text-lg hover:bg-yellow-500 transition duration-300">View Menu</a>
 	</div>
 </section>
 
@@ -35,22 +35,22 @@
 </section>
 
 <section class="py-16 px-8 md:px-16 lg:px-24">
-	<h2 class="text-3xl md:text-4xl font-serif font-bold text-center mb-8 dark:text-gold">Our Signature Dishes</h2>
+	<h2 class="text-3xl md:text-4xl font-serif font-bold text-center mb-8 dark:text-yellow-500">Our Signature Dishes</h2>
 
 	<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
 		{#each data.foods as food, index (index)}
-			<div class="dark:bg-dark-accent bg-white p-6 rounded-lg shadow-md transition duration-300">
+			<div class="dark:bg-zinc-800 bg-white p-6 rounded-lg shadow-md transition duration-300">
 				<img class="w-full h-48 object-cover rounded-md mb-4" src={food.image} alt={food.slug}>
 				<h3 class="text-xl font-bold mb-2">{food.title}</h3>
-				<p class="text-gray-300 line-clamp-2">
+				<p class="line-clamp-2">
 					{#each food.tags as tag, tagIndex (`${index}-${tagIndex}`)}
 						<span class="ml-2 first:ml-0 text-blue-600 dark:text-blue-300">{tag}</span>
 					{/each}
 					{food.desc}
 				</p>
 				<div class="flex justify-end items-center">
-					<p class="mt-2 text-gold font-bold">{food.price}</p>
+					<p class="mt-2 text-yellow-500 font-bold">{food.price}</p>
 					<a
 						href="/content/{food.slug}"
 						class="text-pink-500 px-6 py-4 ml-2 rounded-br-xl"

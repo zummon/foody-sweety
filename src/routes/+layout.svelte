@@ -18,7 +18,7 @@
 </script>
 
 <nav class="py-6 px-8 md:px-16 lg:px-24 flex justify-between items-center">
-	<h1 class="text-2xl md:text-3xl font-serif font-bold dark:text-gold">Sweet Dark
+	<h1 class="text-2xl md:text-3xl font-serif font-bold dark:text-yellow-500">Sweet Dark
 		<button class="text-zinc-500"
 		onclick={() => {
 			isdark = !isdark;
@@ -31,10 +31,10 @@
 	</button>
 	</h1>
 	<ul class="flex space-x-6 md:space-x-10 text-lg">
-		<li><a href="/content" class="hover:text-gold transition duration-300">Menu</a></li>
-		<li><a href="/" class="hover:text-gold transition duration-300">About</a></li>
-		<li><a href="/" class="hover:text-gold transition duration-300">Contact</a></li>
-		<li><a href="/" class="bg-gold text-dark-bg py-2 px-4 rounded-md hover:bg-yellow-500 transition duration-300">Reservations</a></li>
+		<li><a href="/content" class="hover:text-yellow-500 transition duration-300">Menu</a></li>
+		<li><a href="/" class="hover:text-yellow-500 transition duration-300">About</a></li>
+		<li><a href="/" class="hover:text-yellow-500 transition duration-300">Contact</a></li>
+		<li><a href="/" class="bg-yellow-500 text-zinc-900 py-2 px-4 rounded-md hover:bg-yellow-500 transition duration-300">Reservations</a></li>
 	</ul>
 </nav>
 

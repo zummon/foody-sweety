@@ -26,7 +26,7 @@
 	<meta name="description" content={data.desc} />
 </svelte:head>
 
-<div class="flex flex-wrap justify-center gap-4 max-w-(--breakpoint-lg) mx-auto">
+<div class="flex flex-wrap justify-center gap-4 max-w-lg mx-auto">
 	{#each data.tags as tag, index (`tag-${index}`)}
 		<button class="py-0.5 px-1 sm:px-2 rounded-full text-lg {tags.includes(tag) ? 'text-pink-600 bg-pink-100 dark:text-pink-400 dark:bg-pink-900' : 'text-blue-600 bg-blue-100 dark:text-blue-400 dark:bg-blue-900'}" onclick={() => {
 			if (tags.includes(tag)) {
@@ -40,7 +40,7 @@
 
 {#each foods as food, index (index)}
 	<div
-		class="dark:bg-zinc-800 bg-zinc-50 max-w-(--breakpoint-md) rounded-xl mx-auto my-8 shadow-lg shadow-pink-200 dark:shadow-pink-950 sm:flex flex-wrap"
+		class="dark:bg-zinc-800 bg-zinc-50 max-w-lg rounded-xl mx-auto my-8 shadow-lg shadow-pink-200 dark:shadow-pink-950 sm:flex flex-wrap"
 	>
 		<div class="flex-1">
 			<img
