@@ -1,9 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-	content: [
-		"./index.html",
-		"./src/**/*.{svelte,js,ts,jsx,tsx}",
-	],
+	darkMode: 'class',
+  content: ['./src/**/*.{html,js,svelte,ts}'],
 	theme: {
 		extend: {
 			colors: {
@@ -16,10 +14,9 @@ export default {
 				'serif': ['Playfair Display', 'serif'], // Example serif font
 				'sans': ['Montserrat', 'sans-serif'], // Example sans font
 			},
-			backgroundImage: {
-				'hero-pattern': "url('/path/to/your/hero-image.jpg')", // Replace with your image path
-			}
 		},
 	},
-	plugins: [],
+	plugins: [
+		require('@tailwindcss/typography'),
+	],
 }

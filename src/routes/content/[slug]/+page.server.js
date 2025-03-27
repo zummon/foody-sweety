@@ -1,14 +1,16 @@
 import { marked } from 'marked'
-import food from '../../../lib/food.json'
+import { dataUrl } from '../../../lib/data.js'
 
 export const prerender = true;
 export const ssr = true;
 export const csr = false;
 
-export async function load({ params }) {
-	let pick = food[params.slug]
-	let content = await import(`../../../lib/content/${params.slug}.md?raw`);
-	let html = marked.parse(content.default)
+export async function load({ params, fetch }) {
+	let res = await fetch(dataUrl + '?slug=' + params.slug)
+	let json = await res.json()
 
-	return { ...pick, content: html, slug: params.slug };
+	let food = json.food
+	let html = marked.parse(json.md)
+
+	return { ...food, content: html, slug: params.slug };
 };

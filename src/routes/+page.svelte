@@ -25,7 +25,7 @@
 	<h2 class="text-3xl md:text-4xl font-serif font-bold text-center mb-8">About Us</h2>
 	<div class="md:grid grid-cols-2 gap-12">
 		<div>
-			<img src="/path/to/your/about-image.jpg" alt="About Us" class="rounded-lg shadow-lg">
+			<img src="" alt="About Us" class="rounded-lg shadow-lg">
 		</div>
 		<div class="text-lg">
 			<p class="mb-4">We are a unique dining experience offering a modern take on classic cuisine in an elegant and dimly lit setting. Our focus is on fresh, seasonal ingredients and impeccable service.</p>
