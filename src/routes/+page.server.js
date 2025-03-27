@@ -1,21 +1,19 @@
-import { dataUrl } from '../lib/data.js'
+import food from '../lib/food.json'
 
 export const prerender = true;
 
-export const load = async ({ parent, fetch }) => {
-	let res = await fetch(dataUrl)
-	let json = await res.json()
+export async function load({ parent, }) {
 	
 	let tags = new Set()
 	let foods = []
 
 	let { title, desc } = await parent()
 
-	for (let slug in json.foods) {
-		for (let tag of json.foods[slug].tags) {
+	for (let slug in food) {
+		for (let tag of food[slug].tags) {
 			tags.add(tag)
 		}
-		foods.push({ ...json.foods[slug], slug })
+		foods.push({ ...food[slug], slug })
 	}
 
 	return { title, desc, foods, tags };

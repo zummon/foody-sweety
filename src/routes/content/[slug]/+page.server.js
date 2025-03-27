@@ -1,9 +1,7 @@
 import { marked } from 'marked'
-import { dataUrl } from '../../../lib/data.js'
+import data from '../../../lib/food.json'
 
 export const prerender = true;
-export const ssr = true;
-export const csr = false;
 
 const renderer = {
   heading({ tokens, depth }) {
@@ -26,12 +24,11 @@ const renderer = {
 
 marked.use({ renderer });
 
-export async function load({ params, fetch }) {
-	let res = await fetch(dataUrl + '?slug=' + params.slug)
-	let json = await res.json()
+export async function load({ params, }) {
 
-	let food = json.food
-	let html = marked.parse(json.md)
+	let food = data[params.slug]
+	let md = await import(`../../../lib/content/${params.slug}.md?raw`)
+	let html = marked.parse(md.default)
 
 	return { ...food, content: html, slug: params.slug };
 };
