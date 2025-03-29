@@ -3,7 +3,7 @@
 		"title": "Chocolate Sphere Delight",
 		"desc": "This chocolate sphere delight is a decadent dessert that will satisfy any chocolate craving. A sphere of rich chocolate mousse, creamy vanilla ice cream, and a drizzle of dark chocolate sauce",
 		"image": "https://i.imgur.com/wBdLnfB.jpeg",
-		"price": 14.99,
+		"price": "$14.99",
 		"vegetarian": true,
 		"spicy": false,
 		"tags": [
@@ -19,7 +19,7 @@
 		"title": "Modern Tiramisu",
 		"desc": "A visually stunning reinterpretation of the classic tiramisu. This deconstructed dessert showcases individual components like coffee jelly, airy mascarpone foam, and a delicate ladyfinger crumble. The arrangement on the plate invites the diner to assemble their own unique bites",
 		"image": "https://i.imgur.com/7RysxcR.jpeg",
-		"price": 19,
+		"price": "$19",
 		"vegetarian": false,
 		"spicy": false,
 		"tags": [
@@ -35,7 +35,7 @@
 		"title": "Ramen Night in",
 		"desc": "Cozy up and enjoy a delicious bowl of homemade ramen featuring a flavorful broth, al dente noodles, tender pork slices, soft-boiled eggs, and a medley of colorful vegetables",
 		"image": "https://i.imgur.com/3fj6NsT.jpeg",
-		"price": 13.99,
+		"price": "$13.99",
 		"vegetarian": false,
 		"spicy": "May contain mild spice",
 		"tags": [
@@ -68,7 +68,7 @@
 		"title": "Molecular Gastronomy",
 		"desc": "This molecular gastronomy masterpiece uses spheres, textures, and colors to create a visually stunning and innovative dessert",
 		"image": "https://i.imgur.com/fuhOp08.jpeg",
-		"price": 22,
+		"price": "$22",
 		"vegetarian": "Possibly",
 		"spicy": false,
 		"tags": [
@@ -82,7 +82,7 @@
 		"title": "Rainbow Gradient Cake",
 		"desc": "A beautifully crafted rainbow gradient cake displayed on a white cake stand. The frosting transitions smoothly from deep blue at the base to soft pink at the top, creating an eye-catching ombre effect. Perfectly textured with swirls on the top, this cake exudes elegance and creativity. A stack of white plates and fresh lemons in the background add a touch of freshness and warmth to the minimalist composition. Ideal for celebrations, weddings, or birthdays, this cake is both a visual and culinary delight",
 		"image": "https://i.imgur.com/knvt8Hh.jpeg",
-		"price": 22,
+		"price": "$22",
 		"vegetarian": false,
 		"spicy": false,
 		"tags": [

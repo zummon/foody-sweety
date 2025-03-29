@@ -7,9 +7,16 @@ const renderer = {
   heading({ tokens, depth }) {
     const text = this.parser.parseInline(tokens);
 
-    return `<h${depth} class="">
-			${text}
-		</h${depth}>`;
+		if (depth == 1) {
+			return `<h${depth} class="">
+				${text}
+			</h${depth}>`;
+		} else {
+			return `<h${depth} class="">
+				${text}
+			</h${depth}>`;
+		}
+
   },
 	image({ href }) {
 
@@ -27,8 +34,15 @@ marked.use({ renderer });
 export async function load({ params, }) {
 
 	let food = data[params.slug]
-	let md = await import(`../../../lib/content/${params.slug}.md?raw`)
-	let html = marked.parse(md.default)
+	let html = 'no content'
+
+	try {
+		let md = await import(`../../../lib/content/${params.slug}.md?raw`)
+
+		html = marked.parse(md.default)
+	} catch  {
+
+	}
 
 	return { ...food, content: html, slug: params.slug };
 };

@@ -4,17 +4,13 @@ export const prerender = true;
 
 export async function load({ parent, }) {
 	
-	let tags = new Set()
 	let foods = []
 
 	let { title, desc } = await parent()
 
 	for (let slug in food) {
-		for (let tag of food[slug].tags) {
-			tags.add(tag)
-		}
-		foods.push({ ...food[slug], slug })
+		foods.push({ ...food[slug], slug, tags: [food[slug].tags[0]] })
 	}
 
-	return { title, desc, foods, tags };
+	return { title, desc, foods: foods.slice(0, 6), };
 };
