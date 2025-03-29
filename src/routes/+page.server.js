@@ -9,7 +9,12 @@ export async function load({ parent, }) {
 	let { title, desc } = await parent()
 
 	for (let slug in food) {
-		foods.push({ ...food[slug], slug, tags: [food[slug].tags[0]] })
+		let mater = food[slug]
+		foods.push({ 
+			...mater, 
+			tags: [mater.tags[0]],
+			slug, 
+		})
 	}
 
 	return { title, desc, foods: foods.slice(0, 6), };
