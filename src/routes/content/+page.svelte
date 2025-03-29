@@ -28,7 +28,7 @@
 
 <div class="flex flex-wrap justify-center gap-4 max-w-lg mx-auto text-lg font-medium">
 	{#each data.tags as tag, index (`tag-${index}`)}
-		<button class="py-0.5 px-2 rounded-full transition duration-300 cursor-pointer {tags.includes(tag) ? 'text-orange-600 bg-orange-100 dark:text-orange-400 dark:bg-orange-900' : 'text-zinc-100 bg-zinc-600 dark:text-zinc-900 dark:bg-zinc-400'}" onclick={() => {
+		<button class="py-0.5 px-2 rounded-full transition duration-300 cursor-pointer {tags.includes(tag) ? 'text-orange-600 bg-orange-100 dark:text-orange-400 dark:bg-orange-900' : 'text-black bg-zinc-200 dark:bg-zinc-400'}" onclick={() => {
 			if (tags.includes(tag)) {
 				tags.splice(tags.indexOf(tag), 1)
 			} else {

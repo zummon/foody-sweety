@@ -12,11 +12,15 @@
 	<meta name="description" content={data.desc} />
 </svelte:head>
 
-<section class="h-[60vh] md:h-[80vh] bg-cover bg-center flex flex-col justify-center items-center text-center">
-	<div class="py-8 px-12 rounded-lg">
+<section class="h-[60vh] md:h-[80vh] bg-cover bg-center flex flex-col justify-center items-center text-center relative">
+	<img class="absolute w-[180px] h-[320px] object-cover top-[60px] left-[60px] opacity-30" src="https://i.imgur.com/wBdLnfB.jpeg" alt="">
+	<img class="absolute w-[180px] h-[320px] object-cover top-[60px] right-[60px] opacity-30" src="https://i.imgur.com/G8CuqcC.jpeg" alt="">
+	<img class="absolute w-[180px] h-[320px] object-cover top-[60px] opacity-30" src="https://i.imgur.com/7RysxcR.jpeg" alt="">
+
+	<div class="py-8 px-12 rounded-lg z-10">
 		<h2 class="text-4xl md:text-6xl font-serif font-bold mb-4">{data.title}</h2>
 		<p class="text-lg md:text-xl mb-8 max-w-lg">{data.desc}</p>
-		<a href="/content" class="text-yellow-950 hover:text-yellow-100 bg-yellow-500 text-zinc-900 py-3 px-6 rounded-md text-lg transition duration-300 font-semibold hover:bg-yellow-600 shadow-md shadow-orange-200 dark:shadow-yellow-800">View Menu</a>
+		<a href="/content" class="text-yellow-950 hover:text-yellow-100 bg-yellow-500 py-3 px-6 rounded-md text-lg transition duration-300 font-semibold hover:bg-yellow-600 shadow-md shadow-orange-200 dark:shadow-yellow-800">View Menu</a>
 	</div>
 </section>
 

@@ -41,7 +41,7 @@
 		{#each navs as nav}
 			<li><a href={nav.href} class="transition duration-300 {data.pathname == nav.href ? 'font-semibold text-yellow-600' : 'hover:text-yellow-600'}" target={nav.target}>{nav.content}</a></li>
 		{/each}
-		<li><a href="https://docs.google.com/spreadsheets/d/1v2mkIQHDAdIEwVG8umuEegq8J-X50ca9IkAphrq4qns/edit?usp=sharing" class="text-yellow-950 hover:text-yellow-100 bg-yellow-500 text-zinc-900 py-2 px-4 rounded-md hover:bg-yellow-500 transition duration-300 font-semibold hover:bg-yellow-600 shadow-md shadow-orange-200 dark:shadow-yellow-800" target="_blank">Reserve</a></li>
+		<li><a href="https://docs.google.com/spreadsheets/d/1v2mkIQHDAdIEwVG8umuEegq8J-X50ca9IkAphrq4qns/edit?usp=sharing" class="text-yellow-950 hover:text-yellow-100 bg-yellow-500 py-2 px-4 rounded-md hover:bg-yellow-500 transition duration-300 font-semibold hover:bg-yellow-600 shadow-md shadow-orange-200 dark:shadow-yellow-800" target="_blank">Reserve</a></li>
 	</ul>
 </nav>
 
