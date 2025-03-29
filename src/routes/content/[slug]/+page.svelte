@@ -7,7 +7,7 @@
 	<meta name="description" content={data.desc} />
 </svelte:head>
 
-<div class="dark:bg-zinc-800 bg-zinc-50 max-w-prose rounded-xl mx-auto my-8 shadow-lg shadow-yellow-200 dark:shadow-yellow-950">
+<div class="dark:bg-zinc-800 bg-zinc-50 max-w-prose rounded-xl mx-auto my-8 shadow-lg shadow-orange-200 dark:shadow-yellow-950">
 	<p>
 		<a
 			href="/"

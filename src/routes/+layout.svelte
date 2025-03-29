@@ -25,11 +25,12 @@
 
 <nav class="py-6 px-8 md:px-16 lg:px-24 flex flex-wrap gap-4 md:gap-6 lg:gap-10 justify-between items-center">
 	<h1 class="text-nowrap">
-		<a class="text-xl md:text-2xl font-serif font-medium hover:text-yellow-500 transition duration-300" href="/">Sweet Dark</a>
+		<a class="text-xl md:text-2xl font-serif font-medium hover:text-yellow-600 transition duration-300" href="/">Sweet Dark</a>
 		<button class="text-yellow-500 hover:text-yellow-600 transition duration-300 cursor-pointer"
 			onclick={() => {
 				isdark = !isdark;
 				localStorage.setItem('dark', isdark)
+				document.documentElement.classList.toggle("dark", isdark);
 			}}
 		>
 			<!-- moon -->
@@ -38,9 +39,9 @@
 	</h1>
 	<ul class="flex flex-wrap items-center gap-4 md:gap-6 lg:gap-10 text-lg">
 		{#each navs as nav}
-			<li><a href={nav.href} class="transition duration-300 {data.pathname == nav.href ? 'font-semibold text-yellow-500' : 'hover:text-yellow-500'}" target={nav.target}>{nav.content}</a></li>
+			<li><a href={nav.href} class="transition duration-300 {data.pathname == nav.href ? 'font-semibold text-yellow-600' : 'hover:text-yellow-600'}" target={nav.target}>{nav.content}</a></li>
 		{/each}
-		<li><a href="https://docs.google.com/spreadsheets/d/1v2mkIQHDAdIEwVG8umuEegq8J-X50ca9IkAphrq4qns/edit?usp=sharing" class="bg-yellow-500 text-zinc-900 py-2 px-4 rounded-md hover:bg-yellow-500 transition duration-300 font-semibold hover:bg-yellow-600 shadow-md shadow-yellow-300 dark:shadow-yellow-800" target="_blank">Reserve</a></li>
+		<li><a href="https://docs.google.com/spreadsheets/d/1v2mkIQHDAdIEwVG8umuEegq8J-X50ca9IkAphrq4qns/edit?usp=sharing" class="text-yellow-950 hover:text-yellow-100 bg-yellow-500 text-zinc-900 py-2 px-4 rounded-md hover:bg-yellow-500 transition duration-300 font-semibold hover:bg-yellow-600 shadow-md shadow-orange-200 dark:shadow-yellow-800" target="_blank">Reserve</a></li>
 	</ul>
 </nav>
 

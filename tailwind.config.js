@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
-export default {
-	darkMode: 'class',
+const config = {
+	darkMode: 'selector',
   content: ['./src/**/*.{html,js,svelte,ts}'],
 	theme: {
 		extend: {},
@@ -9,3 +9,4 @@ export default {
 		require('@tailwindcss/typography'),
 	],
 }
+export default config
