@@ -38,7 +38,7 @@
 	{/each}
 </div>
 
-<div class="xl:columns-2">
+<div class="xl:grid xl:grid-cols-2 2xl:grid-cols-3">
 {#each foods as food, index (index)}
 	<div
 		class="dark:bg-zinc-800 bg-zinc-50 max-w-2xl rounded-xl mx-auto my-8 shadow-lg shadow-orange-200 dark:shadow-yellow-950 sm:flex flex-wrap"

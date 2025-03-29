@@ -12,39 +12,44 @@
 	<meta name="description" content={data.desc} />
 </svelte:head>
 
-<section class="h-[60vh] md:h-[80vh] bg-cover bg-center flex flex-col justify-center items-center text-center relative">
-	<img class="absolute w-[180px] h-[320px] object-cover top-[60px] left-[60px] opacity-30" src="https://i.imgur.com/wBdLnfB.jpeg" alt="">
-	<img class="absolute w-[180px] h-[320px] object-cover top-[60px] right-[60px] opacity-30" src="https://i.imgur.com/G8CuqcC.jpeg" alt="">
-	<img class="absolute w-[180px] h-[320px] object-cover top-[60px] opacity-30" src="https://i.imgur.com/7RysxcR.jpeg" alt="">
-
-	<div class="py-8 px-12 rounded-lg z-10">
-		<h2 class="text-4xl md:text-6xl font-serif font-bold mb-4">{data.title}</h2>
+<section class="min-h-[60vh] md:min-h-[80vh] flex flex-wrap xl:flex-nowrap justify-center items-center text-center">
+	<div class="grid grid-cols-2 sm:grid-cols-3 gap-6 lg:gap-8 px-6 pb-6 pt-8 xl:order-last">
+		<div>
+			<img class="object-cover rounded-xl w-64 h-32 sm:h-64 md:h-80 lg:h-96 transform -rotate-2 shadow-lg shadow-orange-200 dark:shadow-yellow-950" src={data.foods[0].image} alt="">
+		</div>
+		<div>
+			<img class="object-cover rounded-xl w-64 h-32 sm:h-64 md:h-80 lg:h-96 transform -translate-y-4 rotate-2 sm:rotate-1 shadow-lg shadow-orange-200 dark:shadow-yellow-950" src={data.foods[3].image} alt="">
+		</div>
+		<div class="col-span-2 sm:col-span-1">
+			<img class="mx-auto sm:mx-0 object-cover rounded-xl w-64 h-32 sm:h-64 md:h-80 lg:h-96 transform sm:translate-y-8 -rotate-1 sm:rotate-6 shadow-lg shadow-orange-200 dark:shadow-yellow-950" src={data.foods[1].image} alt="">
+		</div>
+	</div>
+	<div class="pt-0 sm:pt-8 pb-16 px-8 rounded-lg">
+		<h2 class="text-4xl md:text-6xl font-serif font-bold mb-4 text-yellow-950 dark:text-yellow-100">{data.title}</h2>
 		<p class="text-lg md:text-xl mb-8 max-w-lg">{data.desc}</p>
 		<a href="/content" class="text-yellow-950 hover:text-yellow-100 bg-yellow-500 py-3 px-6 rounded-md text-lg transition duration-300 font-semibold hover:bg-yellow-600 shadow-md shadow-orange-200 dark:shadow-yellow-800">View Menu</a>
 	</div>
 </section>
 
-<section class="py-16 px-8 md:px-16 lg:px-24" id="about">
-	<div class="md:grid grid-cols-2 gap-12">
-		<div class="mb-6 md:mb-0">
-			<img src="https://i.imgur.com/lEylU9L.jpeg" alt="About Us" class="rounded-lg object-cover md:object-contain max-h-80 md:max-h-[480px] mx-auto md:ml-auto md:mr-0">
-		</div>
-		<div class="text-lg">
-			<h2 class="text-3xl md:text-4xl font-serif font-bold text-center mb-8 text-yellow-600 dark:text-yellow-500 md:text-left">About Us</h2>
-			<div class="max-w-md mx-auto md:mr-auto md:ml-0">
-				<p class="mb-4 ">We are a unique dining experience offering a modern take on classic cuisine in an elegant and dimly lit setting. Our focus is on fresh, seasonal ingredients and impeccable service.</p>
-				<p class="">Our passion for culinary excellence is reflected in every dish we create. We invite you to join us for an unforgettable evening.</p>
-			</div>
+<section class="md:grid grid-cols-2 gap-6 lg:gap-12" id="about">
+	<div class="mb-6 md:mb-0">
+		<img src="https://i.imgur.com/lEylU9L.jpeg" alt="About Us" class="rounded-lg object-cover object-top w-[480px] max-w-full max-h-80 md:max-h-[480px] mx-auto md:ml-auto md:mr-0">
+	</div>
+	<div class="md:pt-16 pb-8 sm:pb-20 pl-4 lg:pl-8 pr-8 text-lg">
+		<h2 class="text-3xl md:text-4xl font-serif font-bold text-center mb-8 text-yellow-600 dark:text-yellow-500 md:text-left">About Us</h2>
+		<div class="max-w-md mr-auto ml-auto lg:mr-auto lg:ml-0">
+			<p class="mb-4 ">We are a unique dining experience offering a modern take on classic cuisine in an elegant and dimly lit setting. Our focus is on fresh, seasonal ingredients and impeccable service.</p>
+			<p class="">Our passion for culinary excellence is reflected in every dish we create. We invite you to join us for an unforgettable evening.</p>
 		</div>
 	</div>
 </section>
 
-<section class="py-16 sm:px-8 md:px-16 lg:px-24">
-	<h2 class="text-3xl md:text-4xl font-serif font-bold text-center mb-8">Our Signature Dishes</h2>
-	<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<section class="py-16 sm:px-8 md:px-16 lg:px-24 xl:px-8">
+	<h2 class="text-3xl md:text-4xl font-serif font-bold text-center mb-8 text-yellow-950 dark:text-yellow-100">Our Signature Dishes</h2>
+	<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 xl:gap-6">
 		{#each data.foods as food, index (index)}
 			<div class="dark:bg-zinc-800 bg-white rounded-lg shadow-md shadow-orange-200 dark:shadow-yellow-950">
-				<img class="w-full h-48 object-cover rounded-md mb-4" src={food.image} alt={food.slug}>
+				<img class="w-full h-48 xl:h-52 object-cover rounded-md mb-4" src={food.image} alt={food.slug}>
 				<div class="px-6 py-4">
 					<h3 class="text-xl font-bold mb-2 truncate">{food.title}</h3>
 					<p class="line-clamp-2">
