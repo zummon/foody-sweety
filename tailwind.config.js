@@ -6,7 +6,6 @@ const config = {
 		extend: {},
 	},
 	plugins: [
-		require('@tailwindcss/typography'),
 	],
 }
 export default config

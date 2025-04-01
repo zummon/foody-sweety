@@ -9,7 +9,6 @@
 	"devDependencies": {
 		"@sveltejs/adapter-static": "^3.0.6",
 		"@sveltejs/kit": "^2.11.1",
-		"@tailwindcss/typography": "^0.5.15",
 		"autoprefixer": "^10.4.21",
 		"marked": "^15.0.7",
 		"postcss": "^8.5.3",

@@ -19,25 +19,21 @@
 	</p>
 
 	<div
-		class="prose dark:prose-invert max-w-none px-4 sm:px-8 mb-8 text-center"
+		class="max-w-none px-4 sm:px-8 mb-8 text-center"
 	>
-		<h1>{data.title}</h1>
-		<p>
-			{#each data.tags as tag, index (`tag-${index}`)}
-				<span class="ml-2 first:ml-0 text-orange-600 dark:text-orange-300">{tag}</span>
-			{/each}
-		</p>
-		<p>
-			<img class="rounded-xl object-contain mx-auto max-h-96 max-w-full" src={data.image} alt={data.slug} />
-		</p>
-		<p>{data.desc}</p>
-		<p class="text-orange-600 dark:text-orange-300">
+		<h1 class="text-2xl font-semibold mb-4">{data.title}</h1>
+		{#each data.tags as tag, index (`tag-${index}`)}
+			<span class="ml-2 first:ml-0 text-orange-600 dark:text-orange-300">{tag}</span>
+		{/each}
+		<img class="rounded-xl object-contain mx-auto max-h-96 max-w-full mt-4" src={data.image} alt={data.slug} />
+		<p class="mt-4">{data.desc}</p>
+		<p class="mt-4 text-orange-600 dark:text-orange-300">
 			{data.price}
 		</p>
 	</div>
 
 	<div
-		class="prose dark:prose-invert max-w-none px-4 sm:px-8 mb-8"
+		class="max-w-none px-4 sm:px-8 mb-8"
 	>
 		{@html data.content}
 	</div>

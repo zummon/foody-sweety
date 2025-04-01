@@ -8,11 +8,11 @@ const renderer = {
     const text = this.parser.parseInline(tokens);
 
 		if (depth == 1) {
-			return `<h${depth} class="">
+			return `<h${depth} class="text-2xl font-semibold mb-4">
 				${text}
 			</h${depth}>`;
 		} else {
-			return `<h${depth} class="">
+			return `<h${depth} class="text-xl font-semibold mb-4">
 				${text}
 			</h${depth}>`;
 		}
@@ -25,7 +25,7 @@ const renderer = {
 	paragraph({tokens}) {
     const text = this.parser.parseInline(tokens);
 
-		return `<p class="">${text}</p>`
+		return `<p class="my-2 text-lg">${text}</p>`
 	},
 };
 
