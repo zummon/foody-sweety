@@ -1,6 +1,7 @@
 <script>
 	import "../app.css";
 	import { onMount } from "svelte";
+	import { goto } from '$app/navigation'
 
 	let { data, children } = $props()
 
@@ -13,6 +14,9 @@
 	let isdark = $state(true)
 
 	onMount(async () => {
+		if (data.pathname != '/') {
+			goto(data.pathname)
+		}
 		let dark = localStorage.getItem('dark')
 		if (dark === null) {
 			isdark = matchMedia("(prefers-color-scheme: dark)").matches;
