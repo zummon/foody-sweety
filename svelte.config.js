@@ -7,6 +7,9 @@ const config = {
 		output: {
 			bundleStrategy: 'single',
 		},
+		paths: {
+			base: process.argv.includes('dev') ? '' : process.env.BASE_PATH
+		},
 	},
 };
 
