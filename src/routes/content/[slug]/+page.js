@@ -22,10 +22,24 @@ const renderer = {
 
 		return `<img class="rounded-xl object-contain mx-auto max-h-96 max-w-full" src="${href}" alt="">`
 	},
-	paragraph({tokens}) {
+	paragraph({ tokens }) {
     const text = this.parser.parseInline(tokens);
 
 		return `<p class="my-2 text-lg">${text}</p>`
+	},
+	// list({ items, ordered }) {
+  //   const lis = this.parser.parseInline(items);
+
+	// 	if (ordered) {
+	// 		return `<ol class="">${lis}</ol>`
+	// 	} else {
+	// 		return `<ul class="">${lis}</ul>`
+	// 	}
+	// },
+	listitem({ tokens }) {
+    const text = this.parser.parseInline(tokens);
+
+		return `<li class="ml-2">${text}</li>`
 	},
 };
 

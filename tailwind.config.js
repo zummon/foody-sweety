@@ -3,7 +3,11 @@ const config = {
 	darkMode: 'selector',
   content: ['./src/**/*.{html,js,svelte,ts}'],
 	theme: {
-		extend: {},
+		extend: {
+			fontFamily: {
+				sans: ['"Delius"', 'cursive']
+			},
+		},
 	},
 	plugins: [
 	],
