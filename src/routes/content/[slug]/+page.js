@@ -28,13 +28,10 @@ const renderer = {
 		return `<p class="my-2 text-lg">${text}</p>`
 	},
 	// list({ items, ordered }) {
-  //   const lis = this.parser.parseInline(items);
+    // const text = this.parser.parse(items);
+  //   const tag = ordered ? 'ol' : 'ul';
 
-	// 	if (ordered) {
-	// 		return `<ol class="">${lis}</ol>`
-	// 	} else {
-	// 		return `<ul class="">${lis}</ul>`
-	// 	}
+	// 	return `<${tag} class="">${JSON.stringify(items)}</${tag}>`
 	// },
 	listitem({ tokens }) {
     const text = this.parser.parseInline(tokens);
