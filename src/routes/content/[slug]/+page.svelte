@@ -10,7 +10,7 @@
 <div class="dark:bg-zinc-800 bg-zinc-50 max-w-prose rounded-xl mx-auto my-8 shadow-lg shadow-orange-200 dark:shadow-yellow-950">
 	<p>
 		<a
-			href="/"
+			href="/content"
 			class="text-orange-500 hover:orange-600 px-6 py-4 rounded-tl-xl inline-block font-bold"
 		>
 			<!-- reply -->
@@ -40,7 +40,7 @@
 
 	<p class="flex items-center justify-end">
 		<a
-			href="/"
+			href="/content"
 			class="text-orange-500 hover:orange-600 px-6 py-4 rounded-br-xl font-bold"
 		>
 			<!-- share  -->

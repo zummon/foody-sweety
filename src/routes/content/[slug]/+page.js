@@ -4,42 +4,40 @@ import data from '../../../lib/food.json'
 export const prerender = true;
 
 const renderer = {
-  heading({ tokens, depth }) {
-    const text = this.parser.parseInline(tokens);
+	heading({ tokens, depth }) {
+		const text = this.parser.parseInline(tokens);
 
 		if (depth == 1) {
-			return `<h${depth} class="text-2xl font-semibold mb-4">
-				${text}
-			</h${depth}>`;
+			return `<h${depth} class="text-2xl font-semibold mb-4">${text}</h${depth}>`;
 		} else {
-			return `<h${depth} class="text-xl font-semibold mb-4">
-				${text}
-			</h${depth}>`;
+			return `<h${depth} class="text-xl font-semibold mb-4">${text}</h${depth}>`;
 		}
 
-  },
+	},
 	image({ href }) {
 
 		return `<img class="rounded-xl object-contain mx-auto max-h-96 max-w-full" src="${href}" alt="">`
 	},
 	paragraph({ tokens }) {
-    const text = this.parser.parseInline(tokens);
+		const text = this.parser.parseInline(tokens);
 
 		return `<p class="my-2 text-lg">${text}</p>`
 	},
 	// list({ items, ordered }) {
-    // const text = this.parser.parse(items);
-  //   const tag = ordered ? 'ol' : 'ul';
+	// 	let text = ''
+	// 	items.forEach((tokens) => {
+	// 		text += this.parser.parseInline(tokens);
+	// 	})
+	//   const tag = ordered ? 'ol' : 'ul';
 
-	// 	return `<${tag} class="">${JSON.stringify(items)}</${tag}>`
+	// 	return `<${tag} class="">${text}</${tag}>`
 	// },
-	listitem({ tokens }) {
-    const text = this.parser.parseInline(tokens);
+	// listitem({ tokens }) {
+	// 	const text = this.parser.parseInline(tokens);
 
-		return `<li class="ml-2">${text}</li>`
-	},
+	// 	return `<li class="ml-2">${text}</li>`
+	// },
 };
-
 marked.use({ renderer });
 
 export async function load({ params, }) {
@@ -51,7 +49,7 @@ export async function load({ params, }) {
 		let md = await import(`../../../lib/content/${params.slug}.md?raw`)
 
 		html = marked.parse(md.default)
-	} catch  {
+	} catch {
 
 	}
 

@@ -51,7 +51,7 @@
 			/>
 		</div>
 		<div class="flex-1 flex flex-col">
-			<h3 class="text-4xl p-4 sm:p-8">{food.title}</h3>
+			<h3 class="text-2xl p-4 sm:p-8">{food.title}</h3>
 			<div class="px-4 sm:px-8">
 				{#each food.tags as tag, tagIndex (`${index}-${tagIndex}`)}
 					<span class="ml-2 first:ml-0 text-orange-600 dark:text-orange-300">{tag}</span>
