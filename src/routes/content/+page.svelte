@@ -47,6 +47,7 @@
 			<img
 				class="min-h-full w-full h-56 sm:h-72 md:h-96 object-cover rounded-t-xl sm:rounded-l-xl sm:rounded-tr-none"
 				src={food.image}
+				loading="lazy"
 				alt={food.slug}
 			/>
 		</div>

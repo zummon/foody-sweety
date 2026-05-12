@@ -21,7 +21,7 @@
 		if (dark === null) {
 			isdark = matchMedia("(prefers-color-scheme: dark)").matches;
 		} else {
-			isdark = Boolean(dark);
+			isdark = dark === "true";
 		}
 		document.documentElement.classList.toggle("dark", isdark);
 	});
@@ -39,7 +39,7 @@
 			class="text-yellow-500 hover:text-yellow-600 transition duration-300 cursor-pointer"
 			onclick={() => {
 				isdark = !isdark;
-				localStorage.setItem("dark", isdark);
+				localStorage.setItem("dark", isdark.toString());
 				document.documentElement.classList.toggle("dark", isdark);
 			}}
 		>
@@ -60,7 +60,7 @@
 			<li>
 				<a
 					href={nav.href}
-					class="transition duration-300 {data.pathname == nav.href
+					class="transition duration-300 {(data.pathname == nav.href || (nav.href !== '/' && data.pathname.startsWith(nav.href)))
 						? 'font-semibold text-yellow-600'
 						: 'hover:text-yellow-600'}"
 					target={nav.target}>{nav.content}</a

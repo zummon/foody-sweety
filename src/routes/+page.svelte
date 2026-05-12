@@ -15,13 +15,13 @@
 <section class="min-h-[60vh] md:min-h-[80vh] flex flex-wrap xl:flex-nowrap justify-center items-center text-center">
 	<div class="grid grid-cols-2 sm:grid-cols-3 gap-6 lg:gap-8 px-6 pb-6 pt-8 xl:order-last">
 		<div>
-			<img class="object-cover rounded-xl w-64 h-32 sm:h-64 md:h-80 lg:h-96 transform -rotate-2 shadow-lg shadow-orange-200 dark:shadow-yellow-950" src={data.foods[0].image} alt="">
+			<img class="object-cover rounded-xl w-64 h-32 sm:h-64 md:h-80 lg:h-96 transform -rotate-2 shadow-lg shadow-orange-200 dark:shadow-yellow-950" src={data.foods[0].image} loading="lazy" alt="">
 		</div>
 		<div>
-			<img class="object-cover rounded-xl w-64 h-32 sm:h-64 md:h-80 lg:h-96 transform -translate-y-4 rotate-2 sm:rotate-1 shadow-lg shadow-orange-200 dark:shadow-yellow-950" src={data.foods[3].image} alt="">
+			<img class="object-cover rounded-xl w-64 h-32 sm:h-64 md:h-80 lg:h-96 transform -translate-y-4 rotate-2 sm:rotate-1 shadow-lg shadow-orange-200 dark:shadow-yellow-950" src={data.foods[3].image} loading="lazy" alt="">
 		</div>
 		<div class="col-span-2 sm:col-span-1">
-			<img class="mx-auto sm:mx-0 object-cover rounded-xl w-64 h-32 sm:h-64 md:h-80 lg:h-96 transform sm:translate-y-8 -rotate-1 sm:rotate-6 shadow-lg shadow-orange-200 dark:shadow-yellow-950" src={data.foods[1].image} alt="">
+			<img class="mx-auto sm:mx-0 object-cover rounded-xl w-64 h-32 sm:h-64 md:h-80 lg:h-96 transform sm:translate-y-8 -rotate-1 sm:rotate-6 shadow-lg shadow-orange-200 dark:shadow-yellow-950" src={data.foods[1].image} loading="lazy" alt="">
 		</div>
 	</div>
 	<div class="pt-0 sm:pt-8 pb-16 px-8 rounded-lg">
@@ -33,7 +33,7 @@
 
 <section class="md:grid grid-cols-2 gap-6 lg:gap-12" id="about">
 	<div class="mb-6 md:mb-0">
-		<img src="https://i.imgur.com/lEylU9L.jpeg" alt="About Us" class="rounded-lg object-cover object-top w-[480px] max-w-full max-h-80 md:max-h-[480px] mx-auto md:ml-auto md:mr-0">
+		<img src="https://i.imgur.com/lEylU9L.jpeg" alt="About Us" loading="lazy" class="rounded-lg object-cover object-top w-[480px] max-w-full max-h-80 md:max-h-[480px] mx-auto md:ml-auto md:mr-0">
 	</div>
 	<div class="md:pt-16 pb-8 sm:pb-20 pl-4 lg:pl-8 pr-8 text-lg">
 		<h2 class="text-3xl md:text-4xl font-serif font-bold text-center mb-8 text-yellow-600 dark:text-yellow-500 md:text-left">About Us</h2>
@@ -49,7 +49,7 @@
 	<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 xl:gap-6">
 		{#each data.foods as food, index (index)}
 			<div class="dark:bg-zinc-800 bg-white rounded-lg shadow-md shadow-orange-200 dark:shadow-yellow-950">
-				<img class="w-full h-48 xl:h-52 object-cover rounded-md mb-4" src={food.image} alt={food.slug}>
+				<img class="w-full h-48 xl:h-52 object-cover rounded-md mb-4" src={food.image} loading="lazy" alt={food.slug}>
 				<div class="px-6 py-4">
 					<h3 class="text-xl font-bold mb-2 truncate">{food.title}</h3>
 					<p class="line-clamp-2">

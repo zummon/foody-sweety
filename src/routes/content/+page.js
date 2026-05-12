@@ -21,5 +21,5 @@ export async function load({ parent, }) {
 		})
 	}
 
-	return { title, desc, foods, tags };
+	return { title, desc, foods, tags: Array.from(tags) };
 };
