@@ -21,7 +21,7 @@
 		if (dark === null) {
 			isdark = matchMedia("(prefers-color-scheme: dark)").matches;
 		} else {
-			isdark = Boolean(dark);
+			isdark = dark === "true";
 		}
 		document.documentElement.classList.toggle("dark", isdark);
 	});
